@@ -66,6 +66,9 @@
         <img src="">
       </div>
       <Content :data="homeData.popularItemList"/>
+      <Shoplist />
+      <Cross :data="homeData.popularItemNewUserList"/>
+      <Bottom />
   </div>
 
 </section>
@@ -77,6 +80,9 @@
   import Swiper from 'swiper'
   import BScroll from 'better-scroll'
   import Content from './Content'
+  import Shoplist from './Shoplist'
+  import Bottom from './Bottom'
+  import Cross from './Cross'
   import Vuex from 'vuex'
   import {mapState} from 'vuex'
   export default {
@@ -87,7 +93,10 @@
     },
     components:{
       Content,
-      Carousel
+      Carousel,
+      Shoplist,
+      Bottom,
+      Cross
     },
     mounted() {
 //      分发获取home数据
@@ -134,7 +143,11 @@
   @import "../../../node_modules/swiper/dist/css/swiper.css"
   @import "../../common/stylus/mixins.styl"
   .home_all
+    /*position relative*/
+    width 100%
+    height 100%
     .hm_parcel
+
       position absolute
       height 100%
       width 100%
